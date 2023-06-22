@@ -1,12 +1,8 @@
 const int trigPin = 11;
 const int echoPin = 12;
 
-
 long duration;
 int distance;
-
-
-int get_distance();
 
 void setup() {
   // put your setup code here, to run once:
@@ -16,20 +12,18 @@ void setup() {
 }
 
 void loop() {
-  
-  distance = get_distance();
-  Serial.print("Distance: ");  
-  Serial.println(distance);
-
-
-}
-
-
-int get_distance(){
-  digitalWrite(trigPin, 1);
-  delayMicroseconds(10);
+  // put your main code here, to run repeatedly:
   digitalWrite(trigPin, 0);
+  delayMicroseconds(2);
+  digitalWrite(trigPin, 1);
+
+  delayMicroseconds(10);
+  digitalWrite(10);
+  digitalWrite(trigPin, 0);
+
   duration = pulseIn(echoPin, 1);
-  int dist = duration*0.0343/2;
-  return dist;
+  distance = duration*0.034/2;
+
+  Serial.print("Distance: ");
+  Serial.println(distance);
 }
