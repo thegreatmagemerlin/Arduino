@@ -96,7 +96,7 @@ void move_turn_right(int t){
   analogWrite(motorRight,255);
   digitalWrite(dirRight1, 1);
   digitalWrite(dirRight2, 0);
-  delay(t)
+  delay(t);
   digitalWrite(dirLeft1, 0);
   digitalWrite(dirLeft2, 1);
   digitalWrite(dirRight1, 0);
